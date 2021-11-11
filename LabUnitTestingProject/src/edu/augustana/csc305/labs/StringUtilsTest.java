@@ -27,10 +27,9 @@ public class StringUtilsTest {
 	
 	@Test
 	public void testCaesarCipherMore() {
-		assertEquals("", StringUtils.caesarCipher("", 10)); // always test the corner cases! 
+		assertEquals("EMU",StringUtils.caesarCipher(StringUtils.caesarCipher("EMU", 2),-2)); // always test the corner cases! 
 		// ADD your own assert tests here, to find any remaining bugs in this code
 	}
-
-
+	
 
 }
