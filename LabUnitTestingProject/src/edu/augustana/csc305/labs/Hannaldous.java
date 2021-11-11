@@ -21,40 +21,41 @@ package edu.augustana.csc305.labs;
 //         (read Skrien appendix B, pp 318-331)
 
 public class Hannaldous {
-	
-	// method one to do the thing for Monday's meeting 
-	public static int howbad(int n, String[] x, double roXORZ) {
-		int j = x.length - 1;
-		int ret = 0;
-		n = n; // n = ? 
-		for (int i = 0; i < x.length; i = i + 1) 
-		{
-		if (x[j].length() < n || Help(x[j]).equals("y"))
-			ret++;
-	j--;  }
-		return ret;
-						}
-	// method two helps, and i wrote it at 11:58 p.m. on sunday... 
-	// couldn't find it on stack overflow, so I rolled my pwn. 
-	static String Help(String MAYBE) 
-	{		
-		int yeah = -1;
-		while (yeah++ < MAYBE.length() - 1) {
-			char izard /*PoKeMoN babee*/ = MAYBE.charAt(yeah); 
-			
-			if (! (izard >= 'a' && izard <='z'|| izard >='A' && izard <= 'Z')) return "n"; }
-		return "y";
-	}
-	
-	
-	public static void main(String[] args) {
-		
-		System.out.println(Help("bigmoose$"));
-		System.out.println(Help("emusareawesome"));
-		System.out.println(Help("17"));
 
-		String[] passwords = new String[] { "bigmoose$", "emusareawesome", "123goodbye", "ok&y", "17", "cat" };
-		System.out.println(howbad(8,passwords, 0.0));
+	// method one to do the thing for Monday's meeting
+	public static int countWords(int n, String[] x) {
+		int j = x.length - 1;
+		int count = 0;
+		for (int i = 0; i < x.length; i = i + 1) {
+			if (x[j].length() < n || checkWords(x[j]).equals("Valid"))
+				count++;
+			j--;
+		}
+		return count;
+	}
+
+	// method two helps, and i wrote it at 11:58 p.m. on sunday...
+	// couldn't find it on stack overflow, so I rolled my pwn.
+	public static String checkWords(String word) {
+		int position = -1;
+		while (position < word.length() - 1) {
+			position++;
+			char character = word.charAt(position);
+
+			if (!(character >= 'a' && character <= 'z' || character >= 'A' && character <= 'Z'))
+				return "Invalid";
+		}
+		return "Valid";
+	}
+
+	public static void main(String[] args) {
+
+		System.out.println(checkWords("bigmoose$"));
+		System.out.println(checkWords("emusareawesome"));
+		System.out.println(checkWords("17"));
+		
+		String[] words = new String[] { "bigmoose$", "emusareawesome", "123goodbye", "ok&y", "17", "cat" };
+		System.out.println(countWords(8, words));
 	}
 
 }
