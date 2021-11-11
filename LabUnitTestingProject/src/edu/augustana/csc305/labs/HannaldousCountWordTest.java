@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class HannaldousCountWordTest {
+public class HannaldousCountWordTest {
 
 	@Test
-	void countWordsTest() {
+	public void countWordsTest() {
 		String[] words = new String[] { "bigmoose$", "emusareawesome", "123goodbye", "ok&y", "17", "cat" };
 		assertEquals(4, Hannaldous.countWords(8, words));
 		

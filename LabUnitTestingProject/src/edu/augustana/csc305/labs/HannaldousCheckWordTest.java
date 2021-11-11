@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class HannaldousCheckWordTest {
+public class HannaldousCheckWordTest {
 
 	@Test
-	void checkWordTest() {
+	public void checkWordTest() {
 		assertEquals("Invalid", Hannaldous.checkWords("bigmoose$"));
 		assertEquals("Valid", Hannaldous.checkWords("emusareawesome"));
 		assertEquals("Invalid", Hannaldous.checkWords("17$"));
