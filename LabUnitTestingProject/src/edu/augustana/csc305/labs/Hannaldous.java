@@ -22,7 +22,12 @@ package edu.augustana.csc305.labs;
 
 public class Hannaldous {
 
-	// method one to do the thing for Monday's meeting
+	/**
+	 * Count the number of words that meet the requirement
+	 * @param n - a length-requirement number
+	 * @param x - a list of words
+	 * @return the number of words that have a length and quality that meet the requirement
+	 */
 	public static int countWords(int n, String[] x) {
 		int j = x.length - 1;
 		int count = 0;
@@ -34,8 +39,11 @@ public class Hannaldous {
 		return count;
 	}
 
-	// method two helps, and i wrote it at 11:58 p.m. on sunday...
-	// couldn't find it on stack overflow, so I rolled my pwn.
+	/**
+	 * Evaluate if a word is invalid or valid
+	 * @param word - the word to be evaluated
+	 * @return whether the word is valid or not
+	 */
 	public static String checkWords(String word) {
 		int position = -1;
 		while (position < word.length() - 1) {
@@ -47,7 +55,11 @@ public class Hannaldous {
 		}
 		return "Valid";
 	}
-
+	
+	/**
+	 * Run the methods
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		System.out.println(checkWords("bigmoose$"));
